@@ -22,6 +22,8 @@ class ExtractionsExtractionFormsProjectsSectionsType1 < ApplicationRecord
 
   has_many :extractions_extraction_forms_projects_sections_type1_rows, dependent: :destroy, inverse_of: :extractions_extraction_forms_projects_sections_type1
 
+  has_many :comparable_elements, as: :comparable
+
   validates :type1_id, uniqueness: { scope: :extractions_extraction_forms_projects_section_id }
 
   def type1_name_and_description

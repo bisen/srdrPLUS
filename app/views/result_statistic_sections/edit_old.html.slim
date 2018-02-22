@@ -28,10 +28,3 @@ table
               - @result_statistic_section.measures.each do |m|
                 = label_tag m.name
                 = text_field_tag 'name'
-
-= simple_form_for @result_statistic_section do |f|
-  = f.simple_fields_for :comparisons do |c|
-    = render 'comparison_fields', f: c, arms: arms
-  = link_to_add_association 'add comparison', f, :comparisons
-
-  = f.button :submit, 'Save'
