@@ -72,6 +72,8 @@ class ExtractionsController < ApplicationController
   def work
 #    @extraction_forms_projects = ExtractionFormsProject.includes(:extraction_forms_projects_sections)
 #                                                       .where(project: @extraction.project).all
+
+    @extraction.update_all
     @extraction_forms_projects = @extraction.project.extraction_forms_projects
     @key_questions_projects_array_for_select = @extraction.project.key_questions_projects_array_for_select
   end
